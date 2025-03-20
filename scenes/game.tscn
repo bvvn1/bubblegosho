@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwayfglvfqtsy"]
+
+[ext_resource type="PackedScene" uid="uid://bnbt4fma10j6e" path="res://scenes/gogo.tscn" id="1_uwrxv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+distance = -308.0
+
+[node name="Game" type="Node2D"]
+
+[node name="GOGO" parent="." instance=ExtResource("1_uwrxv")]
+position = Vector2(462, 229)
+scale = Vector2(0.1, 0.1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
