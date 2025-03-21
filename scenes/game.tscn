@@ -13,7 +13,21 @@ scale = Vector2(0.1, 0.1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Boundry_floor" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundry_floor"]
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="Boundry_left" type="StaticBody2D" parent="."]
+position = Vector2(-266, 210)
+rotation = 1.57565
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundry_left"]
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
+
+[node name="Boundry_right" type="StaticBody2D" parent="."]
+position = Vector2(267, 202)
+rotation = 4.71104
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundry_right"]
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
