@@ -7,9 +7,11 @@ var score = 0
 func add_point():
 	score += 1
 
+	
+
 func _ready():
 	var timer = Timer.new()
-	timer.wait_time = 1.7
+	timer.wait_time = randf_range(2.5, 4)
 	add_child(timer)
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
