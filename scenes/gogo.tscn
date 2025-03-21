@@ -1,16 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnbt4fma10j6e"]
+[gd_scene load_steps=6 format=3 uid="uid://bnbt4fma10j6e"]
 
 [ext_resource type="Texture2D" uid="uid://5of1j6yeacv1" path="res://assets/bongo_idle.png" id="1_jl7re"]
 [ext_resource type="Script" uid="uid://cbdg08qw1oj0w" path="res://scripts/gogo.gd" id="1_mb16o"]
+[ext_resource type="Texture2D" uid="uid://cqakx4ea7kgk2" path="res://assets/Bongo_happy.png" id="2_khttd"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mb16o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_khttd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_jl7re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_khttd")
 }],
 "loop": true,
-"name": &"idle_move",
+"name": &"gogo_animation",
 "speed": 5.0
 }]
 
@@ -23,8 +27,9 @@ collision_layer = 2
 script = ExtResource("1_mb16o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_mb16o")
-animation = &"idle_move"
+sprite_frames = SubResource("SpriteFrames_khttd")
+animation = &"gogo_animation"
+frame_progress = 0.372512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 12)
