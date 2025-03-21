@@ -14,3 +14,7 @@ config/name="New Game Project"
 run/main_scene="uid://bwayfglvfqtsy"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
