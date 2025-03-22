@@ -8,6 +8,10 @@ var score = 0
 func add_point():
 	score += 1
 
+var audio_player: AudioStreamPlayer
+
+func playsound():
+	audio_player.play()
 	
 
 func _ready():

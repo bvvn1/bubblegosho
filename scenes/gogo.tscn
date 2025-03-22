@@ -1,11 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnbt4fma10j6e"]
+[gd_scene load_steps=11 format=3 uid="uid://bnbt4fma10j6e"]
 
 [ext_resource type="Texture2D" uid="uid://5of1j6yeacv1" path="res://assets/bongo_idle.png" id="1_jl7re"]
 [ext_resource type="Script" uid="uid://cbdg08qw1oj0w" path="res://scripts/gogo.gd" id="1_mb16o"]
 [ext_resource type="Texture2D" uid="uid://cqakx4ea7kgk2" path="res://assets/Bongo_happy.png" id="2_khttd"]
+[ext_resource type="Script" uid="uid://cawpcrggmhbph" path="res://scripts/animation_player.gd" id="4_fhglv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhglv"]
+atlas = ExtResource("1_jl7re")
+region = Rect2(0, 0, 867, 1215)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_khttd"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhglv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_jl7re")
@@ -14,12 +27,72 @@ animations = [{
 "texture": ExtResource("2_khttd")
 }],
 "loop": true,
-"name": &"gogo_animation",
-"speed": 5.0
+"name": &"pickup",
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_khttd"]
 size = Vector2(904, 1214)
+
+[sub_resource type="Animation" id="Animation_fhglv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"pickup"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hjmo1"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fg104"]
+_data = {
+&"RESET": SubResource("Animation_fhglv"),
+&"pickup_anim": SubResource("Animation_hjmo1")
+}
 
 [node name="GOGO" type="CharacterBody2D"]
 position = Vector2(-1, 1)
@@ -28,10 +101,15 @@ script = ExtResource("1_mb16o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_khttd")
-animation = &"gogo_animation"
-frame_progress = 0.372512
+animation = &"pickup"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 12)
 shape = SubResource("RectangleShape2D_khttd")
 debug_color = Color(0.823214, 0.00167688, 0.959738, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fg104")
+}
+script = ExtResource("4_fhglv")

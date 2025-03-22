@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgfh2w6ii0u58"
-path="res://.godot/imported/Gongo_spritesheet.png-472a85334641d55046aad3ab799d989d.ctex"
+uid="uid://csk5e4pxegyce"
+path="res://.godot/imported/brongo_spritesheet.png-ced9407e80f9f3ec0f66c4f938e456db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gongo_spritesheet.png"
-dest_files=["res://.godot/imported/Gongo_spritesheet.png-472a85334641d55046aad3ab799d989d.ctex"]
+source_file="res://assets/brongo_spritesheet.png"
+dest_files=["res://.godot/imported/brongo_spritesheet.png-ced9407e80f9f3ec0f66c4f938e456db.ctex"]
 
 [params]
 
