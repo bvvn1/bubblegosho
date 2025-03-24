@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c862kvl6vtdlo"]
+[gd_scene load_steps=5 format=3 uid="uid://c862kvl6vtdlo"]
 
 [ext_resource type="Script" uid="uid://bnm0whd3a1ku4" path="res://scripts/duner.gd" id="1_kvti4"]
 [ext_resource type="Texture2D" uid="uid://c3u40y8qvgt40" path="res://assets/duner.png" id="2_7d7ky"]
+[ext_resource type="AudioStream" uid="uid://knqnqj3e2m3h" path="res://assets/roblox-eating-sound-effect-nom-nom-nom.mp3" id="3_7d7ky"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r01oa"]
 radius = 45.0411
@@ -17,5 +18,9 @@ texture = ExtResource("2_7d7ky")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 1.04)
 shape = SubResource("CircleShape2D_r01oa")
+
+[node name="eating_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7d7ky")
+volume_db = 24.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
