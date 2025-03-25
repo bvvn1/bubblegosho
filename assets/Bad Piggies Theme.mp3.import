@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bchrwujprwhy"
+path="res://.godot/imported/Bad Piggies Theme.mp3-7cd6259750de62d5bb97b3d404736b08.mp3str"
+
+[deps]
+
+source_file="res://assets/Bad Piggies Theme.mp3"
+dest_files=["res://.godot/imported/Bad Piggies Theme.mp3-7cd6259750de62d5bb97b3d404736b08.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
